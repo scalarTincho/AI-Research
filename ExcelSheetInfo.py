@@ -5,7 +5,7 @@ Created on Tue Sep  5 12:16:32 2023
 @author: Martin56
 """
 
-#%%
+
 import openpyxl
 import pandas as pd
 from datetime import datetime
@@ -24,7 +24,6 @@ def import_excel_file(path):
     #Create a dictionary to store the dataframes
     dfs_stripped = {}
     workbook_sheets = {} #store the workbook as it is
-    
     
     # Function to check if a string represents a valid date
     def is_valid_date(date_string):
@@ -54,8 +53,7 @@ def import_excel_file(path):
     
         
     dfs_stripped_list = {}  # initialize an empty dictionary
-    
-    #%%
+
     # iterate over dataframes in dfs and construct non_empty_dfs
     for df_name, df in dfs_stripped.items():
         non_empty_values = df[df != ''].values.flatten()   # get non-empty values as a flattened array
@@ -69,7 +67,9 @@ def import_excel_file(path):
     return workbook_sheets, dfs_stripped, dfs_stripped_list
     
 
-if __name__ == "__main__"
-
+if __name__ == "__main__":
+    
     workbook_path = r"C:\Users\Martin56\Dropbox (Scalar Analytics)\Valuation\Powerlytics, Inc(p)\IRC 409A 2023.01\Company Docs\Financials\Powerlytics - BOD Package - 1.31.2023.xlsx"
+    
+    #Return dictionaries
     workbook_sheets, dfs_stripped, dfs_stripped_list = import_excel_file(workbook_path)
