@@ -4,8 +4,6 @@ Created on Tue Sep  5 12:16:32 2023
 
 @author: Martin56
 """
-
-
 import openpyxl
 import pandas as pd
 from datetime import datetime
@@ -21,7 +19,7 @@ def import_excel_file(path):
     #Create a variable to store the sheet names
     # sheet_names = []
     
-    #Create a dictionary to store the dataframes
+     #Create a dictionary to store the dataframes
     dfs_stripped = {}
     workbook_sheets = {} #store the workbook as it is
     
@@ -38,6 +36,7 @@ def import_excel_file(path):
     
     # #Loop through each sheet and create a dataframe with the sheet data
     for sheet in workbook:
+       
         df = pd.DataFrame(sheet.values)
         df = df.fillna("").replace(0,"")
         df = df[df.astype(bool).any(axis=1)]  # Drop rows where all columns are empty
@@ -69,7 +68,7 @@ def import_excel_file(path):
 
 if __name__ == "__main__":
     
-    workbook_path = r"C:\Users\Martin56\Dropbox (Scalar Analytics)\Valuation\Powerlytics, Inc(p)\IRC 409A 2023.01\Company Docs\Financials\Powerlytics - BOD Package - 1.31.2023.xlsx"
+    workbook_path = r"C:\Users\Martin56\Downloads\Light Bio, Inc. P&L (12 months).xlsx"
     
     #Return dictionaries
     workbook_sheets, dfs_stripped, dfs_stripped_list = import_excel_file(workbook_path)
