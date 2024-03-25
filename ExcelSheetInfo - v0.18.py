@@ -134,7 +134,7 @@ def import_excel_file(path):
 # Program starts here
 if __name__ == "__main__":
     # Path for test Excel file
-    workbook_path = r"C:\Users\Martin56\Downloads\Test Cap. Table\Test3.xls"
+    workbook_path = r"C:\Users\Martin56\Dropbox (Scalar Analytics)\Valuation\Powerlytics, Inc(p)\IRC 409A 2023.01\Company Docs\Financials\Powerlytics - BOD Package - 1.31.2023.xlsx"
 
     company_name = "Azova"    
 

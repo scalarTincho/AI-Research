@@ -89,7 +89,7 @@ def import_excel_file(path):
         
         
         # Use applymap to apply the replacement function to each element of the dataframe
-        df = df.map(lambda x: x.replace(company_name, 'SUPER SECRET COMPANY NAME') if isinstance(x, str) else x)
+        # df = df.map(lambda x: x.replace(company_name, 'SUPER SECRET COMPANY NAME') if isinstance(x, str) else x)
                 
        # Construct dictionary for each sheet
         workbook_sheets_loc[sheet_title] = construct_coord_dict(df)  
@@ -135,7 +135,7 @@ if __name__ == "__main__":
     # Path for test Excel file
     workbook_path = r"C:\Users\Martin56\Dropbox (Scalar Analytics)\Valuation\Light Bio, Inc\409A 2021.03\Company Docs\Financials\Light Bio, Inc. P&L (12 months).xlsx"
 
-    company_name = "Azova"    
+    # company_name = "Azova"    
 
     workbook_sheets, workbook_sheets_excel, dfs_stripped, dfs_stripped_list = import_excel_file(workbook_path)
     

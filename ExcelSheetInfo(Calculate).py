@@ -64,7 +64,7 @@ def import_excel_file(path):
         dfs_stripped[sheet.title] = df
         
         # Replace numeric non-date cells    
-        df = df.applymap(lambda x: "" if isinstance(x, (int, float)) and not is_valid_date(str(x)) else x)
+        df = df.map(lambda x: "" if isinstance(x, (int, float)) and not is_valid_date(str(x)) else x)
         dfs_stripped[sheet.title] = df
     
         
@@ -87,7 +87,7 @@ if __name__ == "__main__":
     
     company_name = "Powerlytics"
     
-    workbook_path = r"C:\Users\Martin56\Dropbox (Scalar Analytics)\Valuation\Test Axis AI - Copy\409A 2021.03\Company Docs\Financials\Light Bio, Inc. Balance Sheet (3-31-2021).xlsx"
+    workbook_path = r"C:\Users\Martin56\Downloads\Light Bio, Inc. P&L (12 months).xlsx"
     
     #Return dictionaries
     workbook_sheets, dfs_stripped, dfs_stripped_list = import_excel_file(workbook_path)
