@@ -55,7 +55,7 @@ def import_excel_file(path):
     for sheet in workbook:
        
         df = pd.DataFrame(sheet.values)
-        df = df.fillna("").replace(0,"")
+        df = df.fillna("").replace(0,"").replace(company_name,"")
         df = df[df.astype(bool).any(axis=1)]  # Drop rows where all columns are empty
         df = df.loc[:, df.astype(bool).any(axis=0)] 
         
@@ -85,6 +85,7 @@ def import_excel_file(path):
 
 if __name__ == "__main__":
     
+    company_name = "Powerlytics"
     
     workbook_path = r"C:\Users\Martin56\Dropbox (Scalar Analytics)\Valuation\Test Axis AI - Copy\409A 2021.03\Company Docs\Financials\Light Bio, Inc. Balance Sheet (3-31-2021).xlsx"
     
